@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-4 card">
         <div class="mt-2">
-          <h1 class="mt-1">Kevin Navarro Navarro</h1>
+          <h2 class="mt-1">Kevin Navarro</h2>
 
           <div class="mt-1">
             <p>
@@ -60,55 +60,36 @@
             </ul>
             <hr />
 
-            <font-awesome-icon icon="clipboard-check" class="text-teal" />
+            <font-awesome-icon icon="circle-plus" class="text-teal" />
             <b> Soft Skills</b>
             <ul class="justify-text m-2">
               <div class="row">
                 <div class="col-md-6">
-                  <li>Java</li>
-                  <li>Spring Boot</li>
-                  <li>Vue.js</li>
-                  <li>Javascript</li>
-                  <li>Assembla</li>
-                  <li>Angular</li>
-                  <li>Scrum</li>
+                  <li>Proactive</li>
+                  <li>Self-Learning</li>
+                  <li>Positive Attitude</li>
                 </div>
                 <div class="col-md-6">
-                  <li>Python</li>
-                  <li>HTML</li>
-                  <li>GitHub</li>
-                  <li>SQL Server</li>
-                  <li>MySQL</li>
-                  <li>PostgreSQL</li>
+                  <li>Adaptable</li>
+                  <li>Problem Solving</li>
+                  <li>Teamwork player</li>
                 </div>
               </div>
             </ul>
             <hr />
 
-            <p class="w3-text-theme">
-              <b><i class="fa fa-globe fa-fw w3-text-teal"></i>Languages</b>
-            </p>
-            <p>English</p>
-            <div class="w3-light-grey w3-round-xlarge">
-              <div
-                class="w3-round-xlarge w3-teal"
-                style="height: 24px; width: 100%"
-              ></div>
-            </div>
-            <p>Spanish</p>
-            <div class="w3-light-grey w3-round-xlarge">
-              <div
-                class="w3-round-xlarge w3-teal"
-                style="height: 24px; width: 55%"
-              ></div>
-            </div>
-            <p>German</p>
-            <div class="w3-light-grey w3-round-xlarge">
-              <div
-                class="w3-round-xlarge w3-teal"
-                style="height: 24px; width: 25%"
-              ></div>
-            </div>
+            <font-awesome-icon icon="globe" class="text-teal" />
+            <b> Languages</b>
+            <ul class="justify-text m-2">
+              <div class="row">
+                <div class="col-md-6">
+                  <li>Spanish: Native</li>
+                </div>
+                <div class="col-md-6">
+                  <li>English: A1</li>
+                </div>
+              </div>
+            </ul>
             <br />
           </div>
         </div>
@@ -206,6 +187,8 @@ import {
   faAsterisk,
   faBook,
   faClipboardCheck,
+  faCirclePlus,
+  faGlobe,
   faCertificate,
 } from "@fortawesome/free-solid-svg-icons";
 library.add(
@@ -216,6 +199,8 @@ library.add(
   faAsterisk,
   faBook,
   faClipboardCheck,
+  faCirclePlus,
+  faGlobe,
   faCertificate
 );
 
@@ -223,9 +208,6 @@ export default {
   name: "kn-resume",
   components: {
     FontAwesomeIcon,
-  },
-  props: {
-    msg: String,
   },
 };
 </script>
@@ -236,8 +218,10 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+b {
   font-family: "Times New Roman", Times, serif;
+  color: #1282a2;
 }
 
 .justify-text {
@@ -266,14 +250,7 @@ html {
 *:after {
   box-sizing: inherit;
 }
-/* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
-html {
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-body {
-  margin: 0;
-}
+
 article,
 aside,
 details,
@@ -1102,6 +1079,7 @@ a {
 .card {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   margin: 1%;
+  background-color: #cde7ff;
 }
 
 /* Colors */
