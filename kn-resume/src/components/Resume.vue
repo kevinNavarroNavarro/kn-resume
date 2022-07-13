@@ -3,12 +3,9 @@
     <div class="row">
       <div class="col-md-4 card">
         <div class="mt-2">
-          <img src="./../assets/profileImage.jpeg" style="width: 50%" />
-          <div>
-            <h2>Kevin Navarro Navarro</h2>
-          </div>
+          <h1 class="mt-1">Kevin Navarro Navarro</h1>
 
-          <div>
+          <div class="mt-1">
             <p>
               <font-awesome-icon icon="briefcase" class="text-teal" />
               Software Developer
@@ -26,46 +23,67 @@
             </p>
             <hr />
 
-            <p class="">
-              <b>Areas of Expertise</b>
+            <font-awesome-icon icon="book" class="text-teal" />
+            <b> Short Description</b>
+            <p class="justify-text m-3">
+              Hi, I'm Kevin, a Business Computing who loves developing software.
+              Recently, I'm working on a project using Vue.js, Java Spring Boot,
+              and PostgreSQL. In another project, I'm using SQL Server and
+              WayFast. I enjoy researching new things to increase and still
+              learning about the best way to create apps and adapting my
+              knowledge to newer trends in software development.
             </p>
-            <p>Java</p>
-            <div class="text-teal w3-round-xlarge w3-small">
-              <div
-                class="w3-container w3-center w3-round-xlarge w3-teal"
-                style="width: 90%"
-              >
-                90%
+            <hr />
+
+            <font-awesome-icon icon="clipboard-check" class="text-teal" />
+            <b> Areas of Expertise</b>
+            <ul class="justify-text m-2">
+              <div class="row">
+                <div class="col-md-6">
+                  <li>Java</li>
+                  <li>Spring Boot</li>
+                  <li>Vue.js</li>
+                  <li>Javascript</li>
+                  <li>Assembla</li>
+                  <li>Angular</li>
+                  <li>Scrum</li>
+                </div>
+                <div class="col-md-6">
+                  <li>Python</li>
+                  <li>HTML</li>
+                  <li>GitHub</li>
+                  <li>SQL Server</li>
+                  <li>MySQL</li>
+                  <li>PostgreSQL</li>
+                </div>
               </div>
-            </div>
-            <p>Photography</p>
-            <div class="w3-light-grey w3-round-xlarge w3-small">
-              <div
-                class="w3-container w3-center w3-round-xlarge w3-teal"
-                style="width: 80%"
-              >
-                <div class="w3-center w3-text-white">80%</div>
+            </ul>
+            <hr />
+
+            <font-awesome-icon icon="clipboard-check" class="text-teal" />
+            <b> Soft Skills</b>
+            <ul class="justify-text m-2">
+              <div class="row">
+                <div class="col-md-6">
+                  <li>Java</li>
+                  <li>Spring Boot</li>
+                  <li>Vue.js</li>
+                  <li>Javascript</li>
+                  <li>Assembla</li>
+                  <li>Angular</li>
+                  <li>Scrum</li>
+                </div>
+                <div class="col-md-6">
+                  <li>Python</li>
+                  <li>HTML</li>
+                  <li>GitHub</li>
+                  <li>SQL Server</li>
+                  <li>MySQL</li>
+                  <li>PostgreSQL</li>
+                </div>
               </div>
-            </div>
-            <p>Illustrator</p>
-            <div class="w3-light-grey w3-round-xlarge w3-small">
-              <div
-                class="w3-container w3-center w3-round-xlarge w3-teal"
-                style="width: 75%"
-              >
-                75%
-              </div>
-            </div>
-            <p>Media</p>
-            <div class="w3-light-grey w3-round-xlarge w3-small">
-              <div
-                class="w3-container w3-center w3-round-xlarge w3-teal"
-                style="width: 50%"
-              >
-                50%
-              </div>
-            </div>
-            <br />
+            </ul>
+            <hr />
 
             <p class="w3-text-theme">
               <b><i class="fa fa-globe fa-fw w3-text-teal"></i>Languages</b>
@@ -96,7 +114,7 @@
         </div>
       </div>
 
-      <div class="col-md-8">
+      <div class="col-md-7 card">
         <div class="w3-container w3-card w3-white w3-margin-bottom">
           <h2 class="w3-text-grey w3-padding-16">
             <i class="fa fa-suitcase fa-fw w3-xxlarge w3-text-teal"></i>Work
@@ -172,14 +190,8 @@
             <br />
           </div>
         </div>
-
-        <!-- End Right Column -->
       </div>
-
-      <!-- End Grid -->
     </div>
-
-    <!-- End Page Container -->
   </div>
 </template>
 
@@ -191,8 +203,10 @@ import {
   faHome,
   faEnvelope,
   faPhone,
-  faCertificate,
   faAsterisk,
+  faBook,
+  faClipboardCheck,
+  faCertificate,
 } from "@fortawesome/free-solid-svg-icons";
 library.add(
   faBriefcase,
@@ -200,6 +214,8 @@ library.add(
   faEnvelope,
   faPhone,
   faAsterisk,
+  faBook,
+  faClipboardCheck,
   faCertificate
 );
 
@@ -214,17 +230,25 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-html,
-body,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.justify-text {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+ul {
+  padding: auto;
+  list-style-type: square;
+  list-style-position: inside;
 }
 
 .main-div {
@@ -328,13 +352,7 @@ figure {
 img {
   border-style: none;
 }
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
+
 hr {
   box-sizing: content-box;
   height: 0;
@@ -414,11 +432,6 @@ textarea {
 }
 /* End extract */
 html,
-body {
-  font-family: Verdana, sans-serif;
-  font-size: 15px;
-  line-height: 1.5;
-}
 html {
   overflow-x: hidden;
 }
@@ -439,28 +452,6 @@ h5 {
 }
 h6 {
   font-size: 16px;
-}
-.w3-serif {
-  font-family: serif;
-}
-.w3-sans-serif {
-  font-family: sans-serif;
-}
-.w3-cursive {
-  font-family: cursive;
-}
-.w3-monospace {
-  font-family: monospace;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Segoe UI", Arial, sans-serif;
-  font-weight: 400;
-  margin: 10px 0;
 }
 .w3-wide {
   letter-spacing: 4px;
@@ -1093,11 +1084,7 @@ a {
   margin-top: 16px;
   margin-bottom: 16px;
 }
-.w3-code,
-.w3-codespan {
-  font-family: Consolas, "courier new";
-  font-size: 16px;
-}
+
 .w3-code {
   width: auto;
   background-color: #fff;
@@ -1114,269 +1101,9 @@ a {
 }
 .card {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  margin: 1%;
 }
 
-.w3-spin {
-  animation: w3-spin 2s infinite linear;
-}
-@keyframes w3-spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(359deg);
-  }
-}
-.w3-animate-fading {
-  animation: fading 10s infinite;
-}
-
-.w3-animate-opacity {
-  animation: opac 0.8s;
-}
-@keyframes opac {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-.w3-animate-top {
-  position: relative;
-  animation: animatetop 0.4s;
-}
-@keyframes animatetop {
-  from {
-    top: -300px;
-    opacity: 0;
-  }
-  to {
-    top: 0;
-    opacity: 1;
-  }
-}
-.w3-animate-left {
-  position: relative;
-  animation: animateleft 0.4s;
-}
-@keyframes animateleft {
-  from {
-    left: -300px;
-    opacity: 0;
-  }
-  to {
-    left: 0;
-    opacity: 1;
-  }
-}
-.w3-animate-right {
-  position: relative;
-  animation: animateright 0.4s;
-}
-@keyframes animateright {
-  from {
-    right: -300px;
-    opacity: 0;
-  }
-  to {
-    right: 0;
-    opacity: 1;
-  }
-}
-.w3-animate-bottom {
-  position: relative;
-  animation: animatebottom 0.4s;
-}
-@keyframes animatebottom {
-  from {
-    bottom: -300px;
-    opacity: 0;
-  }
-  to {
-    bottom: 0;
-    opacity: 1;
-  }
-}
-.w3-animate-zoom {
-  animation: animatezoom 0.6s;
-}
-@keyframes animatezoom {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
-  }
-}
-.w3-animate-input {
-  transition: width 0.4s ease-in-out;
-}
-.w3-animate-input:focus {
-  width: 100% !important;
-}
-.w3-opacity,
-.w3-hover-opacity:hover {
-  opacity: 0.6;
-}
-.w3-opacity-off,
-.w3-hover-opacity-off:hover {
-  opacity: 1;
-}
-.w3-opacity-max {
-  opacity: 0.25;
-}
-.w3-opacity-min {
-  opacity: 0.75;
-}
-.w3-greyscale-max,
-.w3-grayscale-max,
-.w3-hover-greyscale:hover,
-.w3-hover-grayscale:hover {
-  filter: grayscale(100%);
-}
-.w3-greyscale,
-.w3-grayscale {
-  filter: grayscale(75%);
-}
-
-.w3-sepia-max,
-.w3-hover-sepia:hover {
-  filter: sepia(100%);
-}
-.w3-sepia-min {
-  filter: sepia(50%);
-}
-.w3-xlarge {
-  font-size: 24px !important;
-}
-.w3-xxlarge {
-  font-size: 36px !important;
-}
-.w3-xxxlarge {
-  font-size: 48px !important;
-}
-.w3-jumbo {
-  font-size: 64px !important;
-}
-.w3-left-align {
-  text-align: left !important;
-}
-.w3-right-align {
-  text-align: right !important;
-}
-.w3-justify {
-  text-align: justify !important;
-}
-.w3-center {
-  text-align: center !important;
-}
-.w3-border-0 {
-  border: 0 !important;
-}
-.w3-border {
-  border: 1px solid #ccc !important;
-}
-.w3-border-top {
-  border-top: 1px solid #ccc !important;
-}
-.w3-border-bottom {
-  border-bottom: 1px solid #ccc !important;
-}
-.w3-border-left {
-  border-left: 1px solid #ccc !important;
-}
-.w3-border-right {
-  border-right: 1px solid #ccc !important;
-}
-.w3-topbar {
-  border-top: 6px solid #ccc !important;
-}
-.w3-bottombar {
-  border-bottom: 6px solid #ccc !important;
-}
-.w3-leftbar {
-  border-left: 6px solid #ccc !important;
-}
-.w3-rightbar {
-  border-right: 6px solid #ccc !important;
-}
-.w3-section,
-.w3-code {
-  margin-top: 16px !important;
-  margin-bottom: 16px !important;
-}
-.w3-margin {
-  margin: 16px !important;
-}
-.w3-margin-top {
-  margin-top: 16px !important;
-}
-.w3-margin-bottom {
-  margin-bottom: 16px !important;
-}
-.w3-margin-left {
-  margin-left: 16px !important;
-}
-
-.w3-padding-small {
-  padding: 4px 8px !important;
-}
-.w3-padding {
-  padding: 8px 16px !important;
-}
-.w3-padding-large {
-  padding: 12px 24px !important;
-}
-.w3-padding-16 {
-  padding-top: 16px !important;
-  padding-bottom: 16px !important;
-}
-.w3-padding-24 {
-  padding-top: 24px !important;
-  padding-bottom: 24px !important;
-}
-.w3-padding-32 {
-  padding-top: 32px !important;
-  padding-bottom: 32px !important;
-}
-.w3-padding-48 {
-  padding-top: 48px !important;
-  padding-bottom: 48px !important;
-}
-.w3-padding-64 {
-  padding-top: 64px !important;
-  padding-bottom: 64px !important;
-}
-.w3-padding-top-64 {
-  padding-top: 64px !important;
-}
-.w3-padding-top-48 {
-  padding-top: 48px !important;
-}
-.w3-padding-top-32 {
-  padding-top: 32px !important;
-}
-.w3-padding-top-24 {
-  padding-top: 24px !important;
-}
-.w3-left {
-  float: left !important;
-}
-.w3-right {
-  float: right !important;
-}
-.w3-button:hover {
-  color: #000 !important;
-  background-color: #ccc !important;
-}
-.w3-transparent,
-.w3-hover-none:hover {
-  background-color: transparent !important;
-}
-.w3-hover-none:hover {
-  box-shadow: none !important;
-}
 /* Colors */
 .text-teal {
   color: #009688 !important;
