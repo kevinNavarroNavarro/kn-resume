@@ -96,31 +96,46 @@
       </div>
 
       <div class="col-md-7 card">
-        <div class="w3-container w3-card w3-white w3-margin-bottom">
-          <h2 class="w3-text-grey w3-padding-16">
-            <i class="fa fa-suitcase fa-fw w3-xxlarge w3-text-teal"></i>Work
-            Experience
+        <div>
+          <h2 class="mt-2">
+            <font-awesome-icon
+              icon="suitcase"
+              class="text-teal"
+              style="font-size: 25px"
+            />
+            Work Experience
           </h2>
-          <div class="w3-container">
-            <h5 class="w3-opacity">
-              <b>Front End Developer / w3schools.com</b>
+          <div>
+            <h5>
+              <b> Nearlinx Software Developer </b>
             </h5>
-            <h6 class="w3-text-teal">
-              <i class="fa fa-calendar fa-fw"></i>Jan 2015 -
-              <span class="w3-tag w3-teal w3-round">Current</span>
+            <h6>
+              <font-awesome-icon icon="calendar" class="text-teal" /> July 2022
+              -
+              <span class="tag w3-teal w3-round">Current</span>
             </h6>
+            <p class="m-0">Software Developer</p>
+            <p>Technologies: WayFast, Microsoft SQL Server and GitLab</p>
+            <hr />
+          </div>
+          <div>
+            <h5>
+              <b> Freelance Software Developer</b>
+            </h5>
+            <h6>
+              <font-awesome-icon icon="calendar" class="text-teal" /> Nov 2021 -
+              <span class="tag w3-teal w3-round">Current</span>
+            </h6>
+            <p class="m-0">Fullstack Software Developer</p>
             <p>
-              Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in
-              deserunt aspernatur est reprehenderit sunt hic. Nulla tempora
-              soluta ea et odio, unde doloremque repellendus iure, iste.
+              Technologies: Vue.js, Java Spring Boot, Aquifer (ORM), PostgreSQL,
+              Trello and Assembla
             </p>
             <hr />
           </div>
-          <div class="w3-container">
-            <h5 class="w3-opacity"><b>Web Developer / something.com</b></h5>
-            <h6 class="w3-text-teal">
-              <i class="fa fa-calendar fa-fw"></i>Mar 2012 - Dec 2014
-            </h6>
+          <div>
+            <h5><b>Web Developer / something.com</b></h5>
+            <h6><i class="fa fa-calendar fa-fw"></i>Mar 2012 - Dec 2014</h6>
             <p>
               Consectetur adipisicing elit. Praesentium magnam consectetur vel
               in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora
@@ -128,45 +143,36 @@
             </p>
             <hr />
           </div>
-          <div class="w3-container">
-            <h5 class="w3-opacity">
+          <div>
+            <h5>
               <b>Graphic Designer / designsomething.com</b>
             </h5>
-            <h6 class="w3-text-teal">
-              <i class="fa fa-calendar fa-fw"></i>Jun 2010 - Mar 2012
-            </h6>
+            <h6><i class="fa fa-calendar fa-fw"></i>Jun 2010 - Mar 2012</h6>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
             <br />
           </div>
         </div>
 
-        <div class="w3-container w3-card w3-white">
-          <h2 class="w3-text-grey w3-padding-16">
+        <div>
+          <h2>
             <font-awesome-icon icon="certificate"></font-awesome-icon>
-            <i class="fa fa-certificate fa-fw w3-xxlarge w3-text-teal"></i
-            >Education
+            <i class="fa fa-certificate fa-fw w3-xxlarge"></i>Education
           </h2>
-          <div class="w3-container">
-            <h5 class="w3-opacity"><b>W3Schools.com</b></h5>
-            <h6 class="w3-text-teal">
-              <i class="fa fa-calendar fa-fw"></i>Forever
-            </h6>
+          <div>
+            <h5><b>W3Schools.com</b></h5>
+            <h6><i class="fa fa-calendar fa-fw"></i>Forever</h6>
             <p>Web Development! All I need to know in one place</p>
             <hr />
           </div>
-          <div class="w3-container">
-            <h5 class="w3-opacity"><b>London Business School</b></h5>
-            <h6 class="w3-text-teal">
-              <i class="fa fa-calendar fa-fw"></i>2013 - 2015
-            </h6>
+          <div>
+            <h5><b>London Business School</b></h5>
+            <h6><i class="fa fa-calendar fa-fw"></i>2013 - 2015</h6>
             <p>Master Degree</p>
             <hr />
           </div>
-          <div class="w3-container">
-            <h5 class="w3-opacity"><b>School of Coding</b></h5>
-            <h6 class="w3-text-teal">
-              <i class="fa fa-calendar fa-fw"></i>2010 - 2013
-            </h6>
+          <div>
+            <h5><b>School of Coding</b></h5>
+            <h6><i class="fa fa-calendar fa-fw"></i>2010 - 2013</h6>
             <p>Bachelor Degree</p>
             <br />
           </div>
@@ -190,6 +196,8 @@ import {
   faCirclePlus,
   faGlobe,
   faCertificate,
+  faCalendar,
+  faSuitcase,
 } from "@fortawesome/free-solid-svg-icons";
 library.add(
   faBriefcase,
@@ -201,6 +209,8 @@ library.add(
   faClipboardCheck,
   faCirclePlus,
   faGlobe,
+  faSuitcase,
+  faCalendar,
   faCertificate
 );
 
@@ -239,6 +249,15 @@ ul {
   max-width: 70%;
   margin: auto;
   padding: 10px;
+}
+
+.tag {
+  background-color: #000;
+  color: #fff;
+  display: inline-block;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
 }
 
 /* W3.CSS 4.15 December 2020 by Jan Egil and Borge Refsnes */
@@ -535,14 +554,6 @@ a {
   box-shadow: none;
 }
 .w3-badge,
-.w3-tag {
-  background-color: #000;
-  color: #fff;
-  display: inline-block;
-  padding-left: 8px;
-  padding-right: 8px;
-  text-align: center;
-}
 .w3-badge {
   border-radius: 50%;
 }
@@ -1053,10 +1064,7 @@ a {
 .w3-round-xxlarge {
   border-radius: 32px;
 }
-.w3-container,
-.w3-panel {
-  padding: 0.01em 16px;
-}
+
 .w3-panel {
   margin-top: 16px;
   margin-bottom: 16px;
