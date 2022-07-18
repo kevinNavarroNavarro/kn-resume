@@ -1,29 +1,43 @@
 <template>
-  <div class="header"></div>
+  <div class="header">
+    <div class="mt-1 row m-0 p-0">
+      <div class="col-md-4">
+        <h1 class="text-left">Resume</h1>
+      </div>
+      <div class="col-md-8 mt-2" style="text-align: right">
+        <a
+          href="https://drive.google.com/file/d/1fPqug2Bs3K_-inxIjmO1VAX21WYz8Uo0/view?usp=sharing"
+          target="_blank"
+          ><img src="../assets/pdf.png" alt="PDF Icon" style="width: 30px"
+        /></a>
+      </div>
+    </div>
+  </div>
   <div class="main-div">
     <div class="row">
       <div class="col-md-4 card">
         <div class="mt-2">
-          <h2 class="mt-1">Kevin Navarro</h2>
+          <div>
+            <div class="mt-1 personal-information">
+              <h1 class="mt-1">Kevin Navarro</h1>
+              <p>
+                <font-awesome-icon icon="briefcase" class="text-teal" />
+                Software Developer
+              </p>
+              <p>
+                <font-awesome-icon icon="envelope" class="text-teal" />
+                ken314588@gmail.com
+              </p>
+              <p>
+                <font-awesome-icon icon="phone" class="text-teal" /> +506
+                8597-0967
+              </p>
+            </div>
 
-          <div class="mt-1">
-            <p>
-              <font-awesome-icon icon="briefcase" class="text-teal" />
-              Software Developer
-            </p>
-            <p>
-              <font-awesome-icon icon="envelope" class="text-teal" />
-              ken314588@gmail.com
-            </p>
-            <p>
-              <font-awesome-icon icon="phone" class="text-teal" /> +506
-              8597-0967
-            </p>
             <hr />
-
             <font-awesome-icon icon="book" class="text-teal" />
             <b> Profile</b>
-            <p class="justify-text m-4">
+            <p class="justify-text m-4 mt-2">
               Hi, I'm Kevin, a Business Computing who loves developing software.
               Recently, I'm working on a project using Vue.js, Java Spring Boot,
               and PostgreSQL. In another project, I'm using SQL Server and
@@ -104,25 +118,31 @@
             Work Experience
           </h2>
           <div>
-            <h5>
-              <b> Nearlinx Software Developer </b>
-            </h5>
-            <h6>
-              <font-awesome-icon icon="calendar" class="text-teal" /> July 2022
-              -
+            <h5 class="wrapper">
+              <b> Nearlinx Software Developer - </b>
+
+              <font-awesome-icon
+                icon="calendar"
+                class="text-teal"
+                style="font-size: 85%"
+              />
+              July 2022 -
               <span class="tag teal">Current</span>
-            </h6>
+            </h5>
             <p class="m-0">Software Developer</p>
             <p>Technologies: WayFast, Microsoft SQL Server and GitLab</p>
           </div>
           <div>
-            <h5>
-              <b> Freelance Software Developer</b>
-            </h5>
-            <h6>
-              <font-awesome-icon icon="calendar" class="text-teal" /> Nov 2021 -
+            <h5 class="wrapper">
+              <b> Freelance Software Developer - </b>
+              <font-awesome-icon
+                icon="calendar"
+                class="text-teal"
+                style="font-size: 85%"
+              />
+              Nov 2021 -
               <span class="tag teal">Current</span>
-            </h6>
+            </h5>
             <p class="m-0">Full Stack Software Developer</p>
             <p>
               Technologies: Vue.js, Java Spring Boot, Aquifer (ORM), PostgreSQL,
@@ -130,27 +150,31 @@
             </p>
           </div>
           <div>
-            <h5>
-              <b> Nearlinx Software Developer </b>
+            <h5 class="wrapper">
+              <b> Nearlinx Software Developer - </b>
+              <font-awesome-icon
+                icon="calendar"
+                class="text-teal"
+                style="font-size: 85%"
+              />
+              August 2021 - Dec 2021
             </h5>
-            <h6>
-              <font-awesome-icon icon="calendar" class="text-teal" /> August
-              2021 - Dec 2021
-            </h6>
             <p class="m-0">Full Stack Software Developer</p>
-            <p>
+            <p class="m-4 mt-2 mb-2">
               Internal ERP development Technologies: Python with Odoo, Backbone,
               GitFlow, Kanban agile methodology and Docker container
             </p>
           </div>
           <div>
-            <h5>
-              <b> University of Costa Rica Software Developer</b>
+            <h5 class="wrapper">
+              <b> University of Costa Rica Software Developer - </b>
+              <font-awesome-icon
+                icon="calendar"
+                class="text-teal"
+                style="font-size: 85%"
+              />
+              Sep 2021 - Dec 2021
             </h5>
-            <h6>
-              <font-awesome-icon icon="calendar" class="text-teal" /> Sep 2021 -
-              Dec 2021
-            </h6>
             <p class="m-0">Full Stack Software Developer</p>
             <p>
               Internal ERP development Technologies: Angular, Material, Java
@@ -170,26 +194,39 @@
             Education
           </h2>
           <div>
-            <h5><b>Bachelor Bussines Computing</b></h5>
-            <h6>
-              <font-awesome-icon icon="calendar" class="text-teal" /> 2018 -
-              2022
-            </h6>
+            <h5 class="wrapper">
+              <b>Bachelor Bussines Computing - </b>
+              <font-awesome-icon
+                icon="calendar"
+                class="text-teal"
+                style="font-size: 85%"
+              />
+              2018 - 2022
+            </h5>
             <p>University of Costa Rica</p>
           </div>
           <div>
-            <h5><b>Nanodegree Full Stack Web Developer</b></h5>
-            <h6>
-              <font-awesome-icon icon="calendar" class="text-teal" /> 2021
-            </h6>
+            <h5 class="wrapper">
+              <b>Nanodegree Full Stack Web Developer - </b>
+              <font-awesome-icon
+                icon="calendar"
+                class="text-teal"
+                style="font-size: 85%"
+              />
+              2021
+            </h5>
             <p>Udacity</p>
           </div>
           <div>
-            <h5><b>Middle Technician Degree Business Computing</b></h5>
-            <h6>
-              <font-awesome-icon icon="calendar" class="text-teal" /> 2015 -
-              2017
-            </h6>
+            <h5 class="wrapper">
+              <b>Middle Technician Degree Business Computing - </b>
+              <font-awesome-icon
+                icon="calendar"
+                class="text-teal"
+                style="font-size: 85%"
+              />
+              2015 - 2017
+            </h5>
             <p>Professional Technical School of Platanares</p>
           </div>
         </div>
@@ -205,10 +242,15 @@
             Certificates
           </h2>
           <div>
-            <h5><b>Scrum Fundamentals Certified (SFC)</b></h5>
-            <h6>
-              <font-awesome-icon icon="calendar" class="text-teal" /> May 2021
-            </h6>
+            <h5 class="wrapper">
+              <b>Scrum Fundamentals Certified (SFC) - </b>
+              <font-awesome-icon
+                icon="calendar"
+                class="text-teal"
+                style="font-size: 85%"
+              />
+              May 2021
+            </h5>
             <p class="m-0">
               SCRUMstudy - Accreditation Body for Scrum and Agile
             </p>
@@ -228,14 +270,13 @@
         ><img src="../assets/linkedIn.png" alt="LinkedIn Icon" class="icon"
       /></a>
       <a href="https://github.com/kevinNavarroNavarro" target="_blank"
-        ><img src="../assets/github.png" alt="LinkedIn Icon" class="icon ml-2"
+        ><img src="../assets/github.png" alt="LinkedIn Icon" class="icon"
       /></a>
     </div>
   </div>
 </template>
 
 <script>
-import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import {
   faBriefcase,
@@ -252,6 +293,7 @@ import {
   faGraduationCap,
   faCertificate,
 } from "@fortawesome/free-solid-svg-icons";
+import { library } from "@fortawesome/fontawesome-svg-core";
 library.add(
   faBriefcase,
   faHome,
@@ -273,10 +315,17 @@ export default {
   components: {
     FontAwesomeIcon,
   },
+
+  data() {
+    return {};
+  },
+
+  methods: {},
 };
 </script>
 
 <style scoped>
+/* Override tags */
 h1,
 h2,
 h3,
@@ -290,6 +339,28 @@ b {
 
 p {
   font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+}
+
+ul {
+  list-style-type: square;
+  list-style-position: inside;
+}
+
+/* Define css classes */
+.header {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  background-color: #cde7ff;
+  padding-top: 1px;
+  position: -webkit-sticky; /* Used for Safari*/
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.text-left {
+  text-align: left;
+  margin-left: 5%;
 }
 
 .wrapper {
@@ -303,24 +374,17 @@ p {
   text-justify: inter-word;
 }
 
-ul {
-  padding: auto;
-  list-style-type: square;
-  list-style-position: inside;
-}
-
 .main-div {
   max-width: 80%;
   margin: auto;
-  padding: 10px;
 }
 
 .tag {
   background-color: #000;
   color: #fff;
   display: inline-block;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
   text-align: center;
 }
 
@@ -328,12 +392,6 @@ ul {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   margin: 1%;
   background-color: #cde7ff;
-}
-
-.header {
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  background-color: #cde7ff;
-  padding: 2%;
 }
 
 .footer {
