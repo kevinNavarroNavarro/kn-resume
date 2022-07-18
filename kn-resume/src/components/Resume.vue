@@ -11,20 +11,17 @@
               Software Developer
             </p>
             <p>
-              <font-awesome-icon icon="home" class="text-teal" />
-              Cartago, Costa Rica
-            </p>
-            <p>
               <font-awesome-icon icon="envelope" class="text-teal" />
               ken314588@gmail.com
             </p>
             <p>
-              <font-awesome-icon icon="phone" class="text-teal" /> 8597-0967
+              <font-awesome-icon icon="phone" class="text-teal" /> +506
+              8597-0967
             </p>
             <hr />
 
             <font-awesome-icon icon="book" class="text-teal" />
-            <b> Short Description</b>
+            <b> Profile</b>
             <p class="justify-text m-3">
               Hi, I'm Kevin, a Business Computing who loves developing software.
               Recently, I'm working on a project using Vue.js, Java Spring Boot,
@@ -116,7 +113,6 @@
             </h6>
             <p class="m-0">Software Developer</p>
             <p>Technologies: WayFast, Microsoft SQL Server and GitLab</p>
-            <hr />
           </div>
           <div>
             <h5>
@@ -126,55 +122,96 @@
               <font-awesome-icon icon="calendar" class="text-teal" /> Nov 2021 -
               <span class="tag w3-teal w3-round">Current</span>
             </h6>
-            <p class="m-0">Fullstack Software Developer</p>
+            <p class="m-0">Full Stack Software Developer</p>
             <p>
               Technologies: Vue.js, Java Spring Boot, Aquifer (ORM), PostgreSQL,
               Trello and Assembla
             </p>
-            <hr />
-          </div>
-          <div>
-            <h5><b>Web Developer / something.com</b></h5>
-            <h6><i class="fa fa-calendar fa-fw"></i>Mar 2012 - Dec 2014</h6>
-            <p>
-              Consectetur adipisicing elit. Praesentium magnam consectetur vel
-              in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora
-              soluta ea et odio, unde doloremque repellendus iure, iste.
-            </p>
-            <hr />
           </div>
           <div>
             <h5>
-              <b>Graphic Designer / designsomething.com</b>
+              <b> Nearlinx Software Developer </b>
             </h5>
-            <h6><i class="fa fa-calendar fa-fw"></i>Jun 2010 - Mar 2012</h6>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <br />
+            <h6>
+              <font-awesome-icon icon="calendar" class="text-teal" /> August
+              2021 - Dec 2021
+            </h6>
+            <p class="m-0">Full Stack Software Developer</p>
+            <p>
+              Internal ERP development Technologies: Python with Odoo, Backbone,
+              GitFlow, Kanban agile methodology and Docker container
+            </p>
+          </div>
+          <div>
+            <h5>
+              <b> University of Costa Rica Software Developer</b>
+            </h5>
+            <h6>
+              <font-awesome-icon icon="calendar" class="text-teal" /> Sep 2021 -
+              Dec 2021
+            </h6>
+            <p class="m-0">Full Stack Software Developer</p>
+            <p>
+              Internal ERP development Technologies: Angular, Material, Java
+              Spring Boot, GitFlow
+            </p>
           </div>
         </div>
 
+        <hr />
         <div>
-          <h2>
-            <font-awesome-icon icon="certificate"></font-awesome-icon>
-            <i class="fa fa-certificate fa-fw w3-xxlarge"></i>Education
+          <h2 class="mt-2">
+            <font-awesome-icon
+              icon="graduation-cap"
+              class="text-teal"
+              style="font-size: 25px"
+            />
+            Education
           </h2>
           <div>
-            <h5><b>W3Schools.com</b></h5>
-            <h6><i class="fa fa-calendar fa-fw"></i>Forever</h6>
-            <p>Web Development! All I need to know in one place</p>
-            <hr />
+            <h5><b>Bachelor Bussines Computing</b></h5>
+            <h6>
+              <font-awesome-icon icon="calendar" class="text-teal" /> 2018 -
+              2022
+            </h6>
+            <p>University of Costa Rica</p>
           </div>
           <div>
-            <h5><b>London Business School</b></h5>
-            <h6><i class="fa fa-calendar fa-fw"></i>2013 - 2015</h6>
-            <p>Master Degree</p>
-            <hr />
+            <h5><b>Nanodegree Full Stack Web Developer</b></h5>
+            <h6>
+              <font-awesome-icon icon="calendar" class="text-teal" /> 2021
+            </h6>
+            <p>Udacity</p>
           </div>
           <div>
-            <h5><b>School of Coding</b></h5>
-            <h6><i class="fa fa-calendar fa-fw"></i>2010 - 2013</h6>
-            <p>Bachelor Degree</p>
-            <br />
+            <h5><b>Middle Technician Degree Business Computing</b></h5>
+            <h6>
+              <font-awesome-icon icon="calendar" class="text-teal" /> 2015 -
+              2017
+            </h6>
+            <p>Professional Technical School of Platanares</p>
+          </div>
+        </div>
+
+        <hr />
+        <div>
+          <h2 class="mt-2">
+            <font-awesome-icon
+              icon="certificate"
+              class="text-teal"
+              style="font-size: 25px"
+            />
+            Certificates
+          </h2>
+          <div>
+            <h5><b>Scrum Fundamentals Certified (SFC)</b></h5>
+            <h6>
+              <font-awesome-icon icon="calendar" class="text-teal" /> May 2021
+            </h6>
+            <p class="m-0">
+              SCRUMstudy - Accreditation Body for Scrum and Agile
+            </p>
+            <p>Credential ID: 846528</p>
           </div>
         </div>
       </div>
@@ -195,9 +232,10 @@ import {
   faClipboardCheck,
   faCirclePlus,
   faGlobe,
-  faCertificate,
   faCalendar,
   faSuitcase,
+  faGraduationCap,
+  faCertificate,
 } from "@fortawesome/free-solid-svg-icons";
 library.add(
   faBriefcase,
@@ -211,6 +249,7 @@ library.add(
   faGlobe,
   faSuitcase,
   faCalendar,
+  faGraduationCap,
   faCertificate
 );
 
