@@ -4,7 +4,7 @@
       <div class="col-md-4">
         <h1 class="text-left">Resume</h1>
       </div>
-      <div class="col-md-8" style="text-align: right; margin-top: 0.5%;">
+      <div class="col-md-8" style="text-align: right">
         <a
           href="https://drive.google.com/file/d/1fPqug2Bs3K_-inxIjmO1VAX21WYz8Uo0/view?usp=sharing"
           target="_blank"
