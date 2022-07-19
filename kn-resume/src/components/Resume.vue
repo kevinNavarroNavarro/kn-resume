@@ -98,7 +98,7 @@
                   <li>Spanish: Native</li>
                 </div>
                 <div class="col-md-6">
-                  <li>English: A1</li>
+                  <li>English: B1</li>
                 </div>
               </div>
             </ul>
