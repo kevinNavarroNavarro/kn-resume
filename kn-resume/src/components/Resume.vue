@@ -23,7 +23,7 @@
                 <h1 class="mt-1">Kevin Navarro</h1>
                 <p>
                   <font-awesome-icon icon="briefcase" class="text-teal" />
-                  Software Developer
+                  Software Engineer
                 </p>
                 <p>
                   <font-awesome-icon icon="envelope" class="text-teal" />
@@ -39,7 +39,7 @@
               <font-awesome-icon icon="book" class="text-teal" />
               <b> Profile</b>
               <p class="justify-text m-4 mt-2">
-                Hi, I'm Kevin, a passionate SoftwareEngineer. I have hands-on
+                Hi, I'm Kevin, a passionate Software Engineer. I have hands-on
                 experience building APIs using Java Spring Boot, SQL databases,
                 and Azure DevOps. Continuously driven by curiosity, I enjoy
                 researching emerging technologies and refining my skills to stay
@@ -118,7 +118,7 @@
             </h2>
             <div>
               <h5 class="wrapper">
-                <b> Nearlinx Software Developer - </b>
+                <b> Nearlinx Software Engineer - </b>
 
                 <font-awesome-icon
                   icon="calendar"
