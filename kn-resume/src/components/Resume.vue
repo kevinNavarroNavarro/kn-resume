@@ -20,7 +20,7 @@
           <div class="mt-2">
             <div>
               <div class="mt-1 personal-information">
-                <h1 class="mt-1">Kevin Navarro</h1>
+                <h1 class="mt-1 mb-4">Kevin Navarro</h1>
                 <p>
                   <font-awesome-icon icon="briefcase" class="text-teal" />
                   Software Engineer
@@ -38,8 +38,8 @@
               <hr />
               <font-awesome-icon icon="book" class="text-teal" />
               <b> Profile</b>
-              <p class="justify-text m-4 mt-2">
-                Hi, I'm Kevin, a passionate Software Engineer. I have hands-on
+              <p class="justify-text m-3">
+                Hi, I am Kevin, a passionate Software Engineer. I have hands-on
                 experience building APIs using Java Spring Boot, SQL databases,
                 and Azure DevOps. Continuously driven by curiosity, I enjoy
                 researching emerging technologies and refining my skills to stay
@@ -49,7 +49,7 @@
 
               <font-awesome-icon icon="clipboard-check" class="text-teal" />
               <b> Areas of Expertise</b>
-              <ul class="justify-text m-2">
+              <ul class="justify-text mt-4">
                 <div class="row">
                   <div class="col-md-6">
                     <li>Java</li>
@@ -63,6 +63,7 @@
                   <div class="col-md-6">
                     <li>Python</li>
                     <li>HTML</li>
+                    <li>Git</li>
                     <li>GitHub</li>
                     <li>Microsoft SQL</li>
                     <li>MySQL</li>
@@ -73,7 +74,7 @@
 
               <font-awesome-icon icon="circle-plus" class="text-teal" />
               <b> Soft Skills</b>
-              <ul class="justify-text m-2">
+              <ul class="justify-text mt-4">
                 <div class="row">
                   <div class="col-md-6">
                     <li>Proactive</li>
@@ -91,7 +92,7 @@
 
               <font-awesome-icon icon="globe" class="text-teal" />
               <b> Languages</b>
-              <ul class="justify-text m-2">
+              <ul class="justify-text mt-4">
                 <div class="row">
                   <div class="col-md-6">
                     <li>Spanish: Native</li>
@@ -101,7 +102,6 @@
                   </div>
                 </div>
               </ul>
-              <br />
             </div>
           </div>
         </div>
@@ -116,6 +116,7 @@
               />
               Work Experience
             </h2>
+            <br />
             <div>
               <h5 class="wrapper">
                 <b> Nearlinx Software Engineer - </b>
@@ -207,6 +208,7 @@
               />
               Education
             </h2>
+            <br />
             <div>
               <h5 class="wrapper">
                 <b>Bachelor Bussines Computing - </b>
@@ -255,6 +257,7 @@
               />
               Certificates
             </h2>
+            <br />
             <div>
               <h5 class="wrapper">
                 <b>Scrum Fundamentals Certified (SFC) - </b>
@@ -280,7 +283,8 @@
       <div class="wrapper">
         <a
           href="https://www.linkedin.com/in/kevin-navarro-a64a7b1b9"
-          target="_blank"><img src="../assets/linkedIn.png" alt="LinkedIn Icon" class="icon"
+          target="_blank"
+          ><img src="../assets/linkedIn.png" alt="LinkedIn Icon" class="icon"
         /></a>
         <a href="https://github.com/kevinNavarroNavarro" target="_blank"
           ><img src="../assets/github.png" alt="LinkedIn Icon" class="icon"
@@ -341,13 +345,15 @@ export default {
 <style scoped>
 /* Override tags */
 h1 {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 36px;
+  font-family: "Jost", sans-serif;
+  font-size: 38px;
   color: #00509e;
+  font-weight: 500;
 }
 
 h2 {
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
   font-size: 30px;
   color: #00509e;
 }
@@ -355,20 +361,29 @@ h2 {
 h3,
 h4,
 h5,
-h6,
-b {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 22px;
+h6 {
+  font-family: "Jost", sans-serif;
+  font-size: 23px;
   color: #1282a2;
+  font-weight: 500;
+}
+
+b {
+  font-family: "Jost", sans-serif;
+  font-size: 24px;
+  color: #1282a2;
+  font-weight: 600;
 }
 
 li {
-  font-size: 18px;
+  font-family: "Jost", sans-serif;
+  font-size: 21px;
+  font-weight: 300;
 }
 
 p {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 22px;
+  font-family: "Jost", sans-serif;
+  font-size: 21px;
 }
 
 ul {
@@ -400,7 +415,6 @@ ul {
 
 .justify-text {
   text-align: justify;
-  text-justify: inter-word;
 }
 
 .main-div {
@@ -436,6 +450,7 @@ ul {
 .text-teal {
   color: #009688;
 }
+
 .teal {
   color: #fff;
   background-color: #009688;
