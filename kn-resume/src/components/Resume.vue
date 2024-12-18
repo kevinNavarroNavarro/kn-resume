@@ -209,7 +209,7 @@
             </h2>
             <div>
               <h5 class="wrapper">
-                <b>Bachelor Bussines Computing - </b>
+                <b>Bachelor Business Informatics - </b>
                 <font-awesome-icon
                   icon="calendar"
                   class="text-teal"
@@ -233,7 +233,7 @@
             </div>
             <div>
               <h5 class="wrapper">
-                <b>Middle Technician Degree Business Computing - </b>
+                <b>Middle Technician Degree Business Informatics - </b>
                 <font-awesome-icon
                   icon="calendar"
                   class="text-teal"
