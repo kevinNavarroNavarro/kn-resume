@@ -4,15 +4,16 @@
       <div class="container-fluid">
         <div class="row align-items-center">
           <div class="col-md-6">
-            <h1 class="text-left mb-0">Kevin Navarro</h1>
-            <p class="text-left mb-0" style="color: white; opacity: 0.9;">Software Engineer</p>
+            <h1 class="text-left mb-0">RESUME</h1>
+            <!-- <p class="text-left mb-0" style="color: white; opacity: 0.9;">Software Engineer</p> -->
           </div>
           <div class="col-md-6 text-end">
             <a
-              href="https://drive.google.com/file/d/1fPqug2Bs3K_-inxIjmO1VAX21WYz8Uo0/view?usp=sharing"
+              href="https://drive.google.com/file/d/12sYeuhqiGnMUlOkr7cALRJZs8Qnsgr8N/view?usp=sharing"
               target="_blank"
+              class="pdf-link"
               title="Download PDF"
-              ><img src="../assets/pdf.png" alt="PDF Icon" style="width: 35px"
+              ><img src="../assets/pdf.png" alt="PDF Icon" style="width: 30px; height: auto;"
             /></a>
           </div>
         </div>
@@ -270,7 +271,7 @@
       <h4 class="pt-1">Find me on</h4>
       <div class="wrapper">
         <a
-          href="https://www.linkedin.com/in/kevinnavarronavarro"
+          href="https://www.linkedin.com/in/knavarronavarro"
           target="_blank"><img src="../assets/linkedIn.png" alt="LinkedIn Icon" class="icon"
         /></a>
         <a href="https://github.com/kevinNavarroNavarro" target="_blank"
@@ -425,13 +426,37 @@ ul li::before {
   margin-bottom: 0;
 }
 
-.header a img {
-  filter: brightness(0) invert(1);
+.header a.pdf-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.header a.pdf-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.header a.pdf-link img {
   transition: transform 0.3s ease;
 }
 
-.header a:hover img {
-  transform: translateY(-2px);
+.header a.pdf-link:hover img {
+  transform: scale(1.1);
+}
+
+.header a.pdf-link::after {
+  content: "Download Resume";
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 500;
+  opacity: 0.9;
 }
 
 /* Main Content Area */
