@@ -1,0 +1,63 @@
+export default {
+  resume: 'CURRÍCULUM',
+  downloadResume: 'Descargar Currículum',
+  profile: 'Perfil',
+  profileText: 'Ingeniero de Software apasionado con más de 3 años de experiencia liderando iniciativas backend y entregando soluciones full-stack. Especializado en Java Spring Boot para construir APIs robustas e integrar con bases de datos SQL y plataformas en la nube. También aporta habilidades full-stack con Python y React, mejoradas por herramientas de IA como Claude. Continuamente impulsado por la curiosidad, se mantiene actualizado con tecnologías emergentes para crear soluciones de software escalables y modernas.',
+  technicalSkills: 'Habilidades Técnicas',
+  programmingLanguages: 'Lenguajes de Programación',
+  frameworksLibraries: 'Frameworks/Librerías',
+  databases: 'Bases de Datos',
+  toolsPlatforms: 'Herramientas/Plataformas',
+  softSkills: 'Habilidades Blandas',
+  communication: 'Comunicación',
+  problemSolving: 'Resolución de problemas',
+  selfLearning: 'Autoaprendizaje',
+  leadership: 'Liderazgo',
+  teamwork: 'Trabajo en equipo',
+  languages: 'Idiomas',
+  spanish: 'Español',
+  english: 'Inglés',
+  native: 'Nativo',
+  workExperience: 'Experiencia Laboral',
+  softwareEngineer: 'Ingeniero de Software',
+  softwareDeveloper: 'Desarrollador de Software',
+  remote: 'Remoto',
+  current: 'Actual',
+  education: 'Educación',
+  bachelorDegree: 'Licenciatura en Informática Empresarial',
+  universityOfCostaRica: 'Universidad de Costa Rica',
+  certificates: 'Certificados',
+  personalProductivity: 'Productividad Personal',
+  developingMobileApps: 'Desarrollo de Aplicaciones Móviles',
+  personalProjects: 'Proyectos Personales',
+  weddingManagerApp: 'Aplicación de Gestión de Bodas',
+  crazyLazySlothGenerator: 'Generador de Perezosos Locos',
+  techStack: 'Stack Tecnológico',
+  findMeOn: 'Encuéntrame en',
+  issued: 'Emitido',
+  credentialId: 'ID de Credencial',
+  jobDesc1: [
+    'Lideré proyectos backend usando Java Spring Boot, integrando con bases de datos relacionales e implementando pruebas unitarias/de integración con JUnit para entregar APIs robustas y escalables.',
+    'Gestioné integraciones de API entre plataformas internas/externas, permitiendo comunicación fluida entre sistemas.',
+    'Migré un sistema heredado a Java Spring Boot, reduciendo tiempos de respuesta y mejorando la confiabilidad general.',
+    'Lideré la migración completa de base de datos impactando 5+ servicios, mejorando el rendimiento de consultas y asegurando escalabilidad a largo plazo.',
+    'Trabajé como desarrollador full-stack usando Python (Flask/FastAPI) y React, apoyado por Claude AI para mejorar la productividad del desarrollo y la calidad del código.'
+  ],
+  jobDesc2: [
+    'Diseñé soluciones en Java Spring Boot según las necesidades del cliente.',
+    'Colaboré con el equipo de front-end para entregar características intuitivas y fáciles de usar que mejoren la experiencia del usuario.'
+  ],
+  projectDesc: [
+    'Desarrollé una aplicación web full-stack como invitación digital para mi propia boda.',
+    'Habilité funcionalidad de RSVP (aceptar/rechazar), con datos almacenados en MongoDB a través de una API REST de Spring Boot.',
+    'Implementé características de gestión de invitados en tiempo real para monitorear respuestas.',
+    'Desplegué en DigitalOcean con dominio personalizado y pipeline CI/CD para redespliegue automático via GitFlow.',
+    'Entregué una solución estable, mobile-first que simplificó el seguimiento de invitados y mejoró la UX.'
+  ],
+  nftProjectDesc: [
+    'Creé una colección de NFT durante el auge de los NFT, subiendo imágenes únicas al marketplace OpenSea.',
+    'Desarrollé un algoritmo generativo personalizado con características aleatorias para crear diversos personajes de perezosos.',
+    'Implementé un sistema de niveles (Simple, Raro, Limitado, Seleccionado, Épico y Legendario) basado en combinaciones de características.',
+    'Desplegué exitosamente la colección en la plataforma OpenSea.'
+  ]
+};
