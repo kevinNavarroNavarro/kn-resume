@@ -1,0 +1,63 @@
+export default {
+  resume: 'RESUME',
+  downloadResume: 'Download Resume',
+  profile: 'Profile',
+  profileText: 'Passionate Software Engineer with 3+ years of experience leading backend initiatives and delivering full-stack solutions. Specializes in Java Spring Boot for building robust APIs and integrating with SQL databases and cloud platforms. Also brings full-stack skills with Python and React, enhanced by AI tools like Claude. Continuously driven by curiosity, stays up-to-date with emerging technologies to create scalable and modern software solutions.',
+  technicalSkills: 'Technical Skills',
+  programmingLanguages: 'Programming Languages',
+  frameworksLibraries: 'Frameworks/Libraries',
+  databases: 'Databases',
+  toolsPlatforms: 'Tools/Platforms',
+  softSkills: 'Soft Skills',
+  communication: 'Communication',
+  problemSolving: 'Problem-solving',
+  selfLearning: 'Self-learning',
+  leadership: 'Leadership',
+  teamwork: 'Teamwork',
+  languages: 'Languages',
+  spanish: 'Spanish',
+  english: 'English',
+  native: 'Native',
+  workExperience: 'Work Experience',
+  softwareEngineer: 'Software Engineer',
+  softwareDeveloper: 'Software Developer',
+  remote: 'Remote',
+  current: 'Current',
+  education: 'Education',
+  bachelorDegree: 'Bachelor of Business Informatics',
+  universityOfCostaRica: 'University of Costa Rica',
+  certificates: 'Certificates',
+  personalProductivity: 'Personal Productivity',
+  developingMobileApps: 'Developing Mobile Apps',
+  personalProjects: 'Personal Projects',
+  weddingManagerApp: 'Wedding Manager App',
+  crazyLazySlothGenerator: 'Crazy Lazy Sloth Generator',
+  techStack: 'Tech Stack',
+  findMeOn: 'Find me on',
+  issued: 'Issued',
+  credentialId: 'Credential ID',
+  jobDesc1: [
+    'Led backend projects using Java Spring Boot, integrating with relational databases and implementing unit/integration tests with JUnit to deliver robust, scalable APIs.',
+    'Managed API integrations between internal/external platforms, enabling seamless communication between systems.',
+    'Migrated a legacy system to Java Spring Boot, reducing response times and improving overall reliability.',
+    'Led full database migration impacting 5+ services, improving query performance, and ensuring long-term scalability.',
+    'Worked as a full-stack developer using Python (Flask/FastAPI) and React, supported by Claude AI to enhance development productivity and code quality.'
+  ],
+  jobDesc2: [
+    'Designed Java Spring Boot solutions according to the client\'s needs.',
+    'Collaborated with the front-end team to ship intuitive, user-friendly features to enhance the user experience.'
+  ],
+  projectDesc: [
+    'Developed a full-stack web application as the digital invitation to my own wedding.',
+    'Enabled RSVP (accept/decline) functionality, with data stored in MongoDB via a Spring Boot REST API.',
+    'Implemented real-time guest management features to monitor responses.',
+    'Deployed on DigitalOcean with a custom domain and CI/CD pipeline for auto-redeployment via GitFlow.',
+    'Delivered a stable, mobile-first solution that simplified guest tracking and improved UX.'
+  ],
+  nftProjectDesc: [
+    'Created an NFT collection during the NFT boom, uploading unique images to OpenSea marketplace.',
+    'Developed a custom generative algorithm with randomized features to create diverse sloth characters.',
+    'Implemented a tier system (Simple, Rare, Limited, Selected, Epic, and Legendary) based on feature combinations.',
+    'Successfully deployed the collection on the OpenSea platform.'
+  ]
+};
