@@ -1,10 +1,33 @@
 <template>
-  <Resume :translations="currentTranslations" :theme="theme" @toggleTheme="toggleTheme" @toggleLanguage="toggleLanguage" :language="language" />
+  <Resume
+    :translations="currentTranslations"
+    :theme="theme"
+    :language="language"
+    @toggleTheme="toggleTheme"
+    @toggleLanguage="toggleLanguage"
+  />
 </template>
 
 <script>
 import Resume from "./components/Resume.vue";
 import translations from "./locales/index.js";
+
+// localStorage can throw (private mode, blocked storage); never let that break the page.
+function readSetting(key, fallback) {
+  try {
+    return localStorage.getItem(key) || fallback;
+  } catch (e) {
+    return fallback;
+  }
+}
+
+function saveSetting(key, value) {
+  try {
+    localStorage.setItem(key, value);
+  } catch (e) {
+    // ignore
+  }
+}
 
 export default {
   name: "App",
@@ -13,8 +36,8 @@ export default {
   },
   data() {
     return {
-      theme: localStorage.getItem('theme') || 'dark',
-      language: localStorage.getItem('language') || 'en',
+      theme: readSetting('theme', 'dark'),
+      language: readSetting('language', 'en'),
       translations
     };
   },
@@ -23,18 +46,26 @@ export default {
       return this.translations[this.language];
     }
   },
+  watch: {
+    language: {
+      handler(lang) {
+        document.documentElement.setAttribute('lang', lang);
+      },
+      immediate: true
+    }
+  },
   mounted() {
     this.applyTheme();
   },
   methods: {
     toggleTheme() {
       this.theme = this.theme === 'dark' ? 'light' : 'dark';
-      localStorage.setItem('theme', this.theme);
+      saveSetting('theme', this.theme);
       this.applyTheme();
     },
     toggleLanguage() {
       this.language = this.language === 'en' ? 'es' : 'en';
-      localStorage.setItem('language', this.language);
+      saveSetting('language', this.language);
     },
     applyTheme() {
       document.documentElement.setAttribute('data-theme', this.theme);
@@ -124,5 +155,43 @@ html[data-theme="light"] body {
 #app {
   min-height: 100vh;
   background: transparent;
+}
+
+/* Visible keyboard focus for every interactive element */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print: always black on white, whatever theme is active */
+@media print {
+  html[data-theme] {
+    --bg-primary: #ffffff;
+    --bg-secondary: #ffffff;
+    --bg-accent: #ffffff;
+    --text-primary: #000000;
+    --text-secondary: #333333;
+    --text-light: #555555;
+    --border-color: #cccccc;
+    --glow-color: transparent;
+  }
+
+  html[data-theme] body {
+    background: #ffffff;
+    background-image: none;
+  }
 }
 </style>

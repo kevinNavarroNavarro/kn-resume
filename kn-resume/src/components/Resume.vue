@@ -1,425 +1,253 @@
 <template>
   <div class="resume-container">
-    <div class="header">
+    <header class="header">
       <div class="header-content">
-        <h1 class="text-left mb-0">{{ translations.resume }}</h1>
+        <span class="header-title">{{ translations.resume }}</span>
         <div class="header-buttons">
           <a
-            href="https://drive.google.com/file/d/12sYeuhqiGnMUlOkr7cALRJZs8Qnsgr8N/view?usp=sharing"
+            :href="contact.resumePdf"
             target="_blank"
+            rel="noopener noreferrer"
             class="pdf-link"
-            :title="translations.downloadResume"
-            ><img
-              src="../assets/pdf.png"
-              alt="PDF Icon"
-              style="width: 30px; height: auto"
-          /></a>
-          <button @click="toggleLanguage" class="toggle-btn language-toggle" :title="language === 'en' ? 'Cambiar a Español' : 'Switch to English'">
+            :aria-label="translations.downloadResumeAria"
+          >
+            <font-awesome-icon icon="file-pdf" class="pdf-icon" />
+            <span class="pdf-label">{{ translations.downloadResume }}</span>
+          </a>
+          <button
+            type="button"
+            @click="toggleLanguage"
+            class="toggle-btn language-toggle"
+            :title="translations.switchLanguage"
+            :aria-label="translations.switchLanguage"
+            :lang="language === 'en' ? 'es' : 'en'"
+          >
             {{ language === 'en' ? 'ES' : 'EN' }}
           </button>
-          <button @click="toggleTheme" class="toggle-btn theme-toggle" :title="theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'">
+          <button
+            type="button"
+            @click="toggleTheme"
+            class="toggle-btn theme-toggle"
+            :title="themeToggleLabel"
+            :aria-label="themeToggleLabel"
+          >
             <font-awesome-icon :icon="theme === 'dark' ? 'sun' : 'moon'" />
           </button>
         </div>
       </div>
-    </div>
-    <div class="main-div">
+    </header>
+
+    <main class="main-div">
       <div class="row">
         <div class="col-md-5 card">
           <div class="mt-2">
-            <div>
-              <div class="mt-1 personal-information">
-                <img
-                  src="/profile.jpeg"
-                  alt="Kevin Navarro"
-                  style="
-                    width: 150px;
-                    height: 150px;
-                    border-radius: 50%;
-                    object-fit: cover;
-                    margin-bottom: 1rem;
-                    border: 4px solid var(--primary-color);
-                    box-shadow: 0 0 20px var(--glow-color),
-                      0 4px 15px rgba(0, 0, 0, 0.3);
-                  "
-                />
-                <h1 class="mt-2">Kevin Navarro</h1>
-                <p
-                  class="mb-3"
-                  style="
-                    font-size: 1.125rem;
-                    color: var(--secondary-color);
-                    font-weight: 500;
-                  "
+            <section class="mt-1 personal-information">
+              <img
+                src="/profile.jpeg"
+                :alt="contact.name"
+                class="profile-photo"
+                width="150"
+                height="150"
+              />
+              <h1 class="mt-2">{{ contact.name }}</h1>
+              <p class="mb-3 headline">
+                <font-awesome-icon icon="briefcase" class="text-teal" />
+                {{ translations.headline }}
+              </p>
+              <p>
+                <font-awesome-icon icon="envelope" class="text-teal" />
+                <a :href="`mailto:${contact.email}`" class="contact-link">{{ contact.email }}</a>
+              </p>
+              <p>
+                <font-awesome-icon icon="phone" class="text-teal" />
+                <a :href="contact.phoneHref" class="contact-link">{{ contact.phone }}</a>
+              </p>
+              <p>
+                <font-awesome-icon icon="globe" class="text-teal" />
+                <a
+                  :href="contact.linkedin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="contact-link"
+                  >{{ translations.linkedinProfile }}</a
                 >
-                  <font-awesome-icon icon="briefcase" class="text-teal" />
-                  Software Engineer
-                </p>
-                <p>
-                  <font-awesome-icon icon="envelope" class="text-teal" />
-                  <a
-                    href="mailto:ken314588@gmail.com"
-                    style="color: inherit; text-decoration: none"
-                    >ken314588@gmail.com</a
-                  >
-                </p>
-                <p>
-                  <font-awesome-icon icon="phone" class="text-teal" />
-                  <a
-                    href="tel:+50685970967"
-                    style="color: inherit; text-decoration: none"
-                    >+506 8597-0967</a
-                  >
-                </p>
-                <p>
-                  <font-awesome-icon icon="globe" class="text-teal" />
-                  <a
-                    href="https://linkedin.com/in/knavarronavarro"
-                    target="_blank"
-                    style="color: inherit; text-decoration: none"
-                    >LinkedIn Profile</a
-                  >
-                </p>
-              </div>
+              </p>
+            </section>
 
-              <hr />
-              <h3
-                class="mb-3"
-                style="display: flex; align-items: center; gap: 0.5rem"
-              >
-                <font-awesome-icon
-                  icon="book"
-                  class="text-teal"
-                  style="font-size: 1.25rem"
-                />
-                <span>{{ translations.profile }}</span>
-              </h3>
-              <p class="justify-text m-4 mt-2">
+            <hr />
+            <collapsible-section id="profile" :title="translations.profile" icon="book">
+              <p class="justify-text m-4 mt-0">
                 {{ translations.profileText }}
               </p>
-              <hr />
+            </collapsible-section>
+            <hr />
 
-              <h3
-                class="mb-3"
-                style="display: flex; align-items: center; gap: 0.5rem"
-              >
-                <font-awesome-icon
-                  icon="clipboard-check"
-                  class="text-teal"
-                  style="font-size: 1.25rem"
-                />
-                <span>{{ translations.technicalSkills }}</span>
-              </h3>
+            <collapsible-section
+              id="technical-skills"
+              :title="translations.technicalSkills"
+              icon="clipboard-check"
+            >
               <div class="skills-section">
-                <h6><strong>{{ translations.programmingLanguages }}:</strong></h6>
-                <ul class="justify-text m-2 mb-3">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <li>Java</li>
-                      <li>Python</li>
-                    </div>
-                    <div class="col-md-6">
-                      <li>JavaScript</li>
-                    </div>
-                  </div>
-                </ul>
-
-                <h6><strong>{{ translations.frameworksLibraries }}:</strong></h6>
-                <ul class="justify-text m-2 mb-3">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <li>Spring Boot</li>
-                      <li>Flask</li>
-                      <li>FastAPI</li>
-                    </div>
-                    <div class="col-md-6">
-                      <li>React</li>
-                      <li>Vue.js</li>
-                    </div>
-                  </div>
-                </ul>
-
-                <h6><strong>{{ translations.databases }}:</strong></h6>
-                <ul class="justify-text m-2 mb-3">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <li>MSSQL</li>
-                      <li>MongoDB</li>
-                    </div>
-                    <div class="col-md-6">
-                      <li>MySQL</li>
-                    </div>
-                  </div>
-                </ul>
-
-                <h6><strong>{{ translations.toolsPlatforms }}:</strong></h6>
-                <ul class="justify-text m-2">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <li>Docker</li>
-                      <li>Azure DevOps</li>
-                      <li>Git</li>
-                    </div>
-                    <div class="col-md-6">
-                      <li>Claude</li>
-                      <li>Cursor</li>
-                    </div>
-                  </div>
-                </ul>
+                <template v-for="group in skillGroups" :key="group.labelKey">
+                  <h3 class="skill-group-title">{{ translations[group.labelKey] }}:</h3>
+                  <ul class="two-col m-2 mb-3">
+                    <li v-for="item in group.items" :key="item">{{ item }}</li>
+                  </ul>
+                </template>
               </div>
-              <hr />
+            </collapsible-section>
+            <hr />
 
-              <h3
-                class="mb-3"
-                style="display: flex; align-items: center; gap: 0.5rem"
-              >
-                <font-awesome-icon
-                  icon="circle-plus"
-                  class="text-teal"
-                  style="font-size: 1.25rem"
-                />
-                <span>{{ translations.softSkills }}</span>
-              </h3>
-              <ul class="justify-text m-2">
-                <div class="row">
-                  <div class="col-md-6">
-                    <li>{{ translations.communication }}</li>
-                    <li>{{ translations.problemSolving }}</li>
-                    <li>{{ translations.selfLearning }}</li>
-                  </div>
-                  <div class="col-md-6">
-                    <li>{{ translations.leadership }}</li>
-                    <li>{{ translations.teamwork }}</li>
-                  </div>
-                </div>
+            <collapsible-section id="soft-skills" :title="translations.softSkills" icon="circle-plus">
+              <ul class="two-col m-2">
+                <li v-for="skill in translations.softSkillsList" :key="skill">{{ skill }}</li>
               </ul>
-              <hr />
+            </collapsible-section>
+            <hr />
 
-              <h3
-                class="mb-3"
-                style="display: flex; align-items: center; gap: 0.5rem"
-              >
-                <font-awesome-icon
-                  icon="globe"
-                  class="text-teal"
-                  style="font-size: 1.25rem"
-                />
-                <span>{{ translations.languages }}</span>
-              </h3>
-              <ul class="justify-text m-2">
-                <div class="row">
-                  <div class="col-md-6">
-                    <li>{{ translations.spanish }}: {{ translations.native }}</li>
-                  </div>
-                  <div class="col-md-6">
-                    <li>{{ translations.english }}: B2</li>
-                  </div>
-                </div>
+            <collapsible-section id="languages" :title="translations.languages" icon="globe">
+              <ul class="two-col m-2 mb-3">
+                <li v-for="lang in translations.spokenLanguages" :key="lang.name">
+                  {{ lang.name }}: {{ lang.level }}
+                </li>
               </ul>
-              <br />
-            </div>
+            </collapsible-section>
           </div>
         </div>
 
         <div class="col-md-6 card">
-          <div>
-            <h2 class="mt-2">
-              <font-awesome-icon
-                icon="suitcase"
-                class="text-teal"
-                style="font-size: 25px"
-              />
-              Work Experience
-            </h2>
-            <div>
-              <h5 class="wrapper">
-                <b>Software Engineer - </b>
-                <font-awesome-icon
-                  icon="calendar"
-                  class="text-teal"
-                  style="font-size: 85%"
-                />
-                Jul 2022 -
-                <span class="tag teal">Current</span>
-              </h5>
-              <p class="job-subtitle">Nearlinx - {{ translations.remote }}</p>
-              <ul class="justify-text m-2 mt-1">
-                <li v-for="(desc, index) in translations.jobDesc1" :key="index">
-                  {{ desc }}
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h5 class="wrapper mt-4">
-                <b>Software Developer - </b>
-                <font-awesome-icon
-                  icon="calendar"
-                  class="text-teal"
-                  style="font-size: 85%"
-                />
-                Nov 2021 - Mar 2023
-              </h5>
-              <p class="job-subtitle">Nearlinx - {{ translations.remote }}</p>
-              <ul class="justify-text m-2 mt-2">
-                <li v-for="(desc, index) in translations.jobDesc2" :key="index">
-                  {{ desc }}
-                </li>
-              </ul>
-            </div>
-          </div>
+          <collapsible-section
+            id="experience"
+            :title="translations.workExperience"
+            icon="suitcase"
+            variant="large"
+          >
+            <ol class="timeline">
+              <li
+                v-for="job in translations.experience"
+                :key="job.company"
+                class="timeline-company"
+                :class="{ 'is-grouped': job.roles.length > 1 }"
+              >
+                <h3 class="company-name">
+                  {{ job.company
+                  }}<span v-if="job.location" class="company-location"> · {{ job.location }}</span>
+                </h3>
+                <ol class="timeline-roles">
+                  <li
+                    v-for="role in job.roles"
+                    :key="role.title + role.start"
+                    class="timeline-role"
+                  >
+                    <h4 class="role-title">{{ role.title }}</h4>
+                    <p class="role-dates">
+                      <font-awesome-icon icon="calendar" class="text-teal date-icon" />
+                      {{ role.start }} –
+                      <span v-if="role.current" class="tag">{{ translations.current }}</span>
+                      <template v-else>{{ role.end }}</template>
+                    </p>
+                    <ul class="justify-text m-2 mt-1">
+                      <li v-for="(bullet, index) in role.bullets" :key="index">
+                        {{ bullet }}
+                      </li>
+                    </ul>
+                  </li>
+                </ol>
+              </li>
+            </ol>
+          </collapsible-section>
 
           <hr />
-          <div>
-            <h2 class="mt-2">
-              <font-awesome-icon
-                icon="graduation-cap"
-                class="text-teal"
-                style="font-size: 25px"
-              />
-              {{ translations.education }}
-            </h2>
-            <div>
-              <h5 class="wrapper">
-                <b>{{ translations.bachelorDegree }} - </b>
-                <font-awesome-icon
-                  icon="calendar"
-                  class="text-teal"
-                  style="font-size: 85%"
-                />
-                2018 - 2022
-              </h5>
-              <p>{{ translations.universityOfCostaRica }}</p>
+          <collapsible-section
+            id="education"
+            :title="translations.education"
+            icon="graduation-cap"
+            variant="large"
+          >
+            <div v-for="edu in translations.educationList" :key="edu.degree" class="entry">
+              <h3 class="wrapper entry-title">
+                <b>{{ edu.degree }} - </b>
+                <font-awesome-icon icon="calendar" class="text-teal date-icon" />
+                {{ edu.dates }}
+              </h3>
+              <p>{{ edu.school }}</p>
             </div>
-          </div>
+          </collapsible-section>
 
           <hr />
-          <div>
-            <h2 class="mt-2">
-              <font-awesome-icon
-                icon="code"
-                class="text-teal"
-                style="font-size: 25px"
-              />
-              {{ translations.certificates }}
-            </h2>
-            <div>
-              <h5 class="wrapper">
+          <collapsible-section
+            id="certificates"
+            :title="translations.certificates"
+            icon="certificate"
+            variant="large"
+          >
+            <div v-for="cert in translations.certificateList" :key="cert.name" class="entry">
+              <h3 class="wrapper entry-title">
                 <a
-                  href="https://www.scrumstudy.com/certification/verify?type=SFC&number=846528"
+                  v-if="cert.url"
+                  :href="cert.url"
                   target="_blank"
-                  style="color: inherit; text-decoration: none"
+                  rel="noopener noreferrer"
+                  class="plain-link"
+                  :aria-label="`${cert.name} (${translations.verifyCredential})`"
+                  ><b>{{ cert.name }}</b></a
                 >
-                  <b>Scrum Fundamentals Certified (SFC) - </b>
-                </a>
-                <font-awesome-icon
-                  icon="calendar"
-                  class="text-teal"
-                  style="font-size: 85%"
-                />
-                {{ translations.issued }} May, 2021
-              </h5>
+                <b v-else>{{ cert.name }}</b>
+                <template v-if="cert.date">
+                  <b> - </b>
+                  <font-awesome-icon icon="calendar" class="text-teal date-icon" />
+                  {{ translations.issued }} {{ cert.date }}
+                </template>
+              </h3>
               <p>
-                SCRUMstudy - Accreditation Body for Scrum and Agile | Credential
-                ID 846528
+                {{ cert.issuer
+                }}<template v-if="cert.credentialId">
+                  | {{ translations.credentialId }} {{ cert.credentialId }}</template
+                >
               </p>
             </div>
-            <div>
-              <h5 class="wrapper mt-2">
-                <b>{{ translations.personalProductivity }} - </b>
-                <font-awesome-icon
-                  icon="calendar"
-                  class="text-teal"
-                  style="font-size: 85%"
-                />
-                {{ translations.issued }} Dec, 2020
-              </h5>
-              <p>Google Actívate | {{ translations.credentialId }} 882 T3J MV4</p>
-            </div>
-            <div>
-              <h5 class="wrapper mt-2">
-                <b>{{ translations.developingMobileApps }} - </b>
-                <font-awesome-icon
-                  icon="calendar"
-                  class="text-teal"
-                  style="font-size: 85%"
-                />
-                {{ translations.issued }} Jul, 2020
-              </h5>
-              <p>Google Actívate | {{ translations.credentialId }} 2RR 2YX VKB</p>
-            </div>
-            <div>
-              <h5 class="wrapper mt-2">
-                <b>IT Essentials: PC Hardware and Software</b>
-              </h5>
-              <p>Cisco Networking Academy | Credential ID EMCI-158-2015</p>
-            </div>
-          </div>
+          </collapsible-section>
 
           <hr />
-          <div>
-            <h2 class="mt-2">
-              <font-awesome-icon
-                icon="code"
-                class="text-teal"
-                style="font-size: 25px"
-              />
-              {{ translations.personalProjects }}
-            </h2>
-            <div>
-              <h5 class="wrapper">
-                <b>{{ translations.weddingManagerApp }} - </b>
-                <font-awesome-icon
-                  icon="calendar"
-                  class="text-teal"
-                  style="font-size: 85%"
-                />
-                2025
-              </h5>
+          <collapsible-section
+            id="projects"
+            :title="translations.personalProjects"
+            icon="code"
+            variant="large"
+            :default-open="false"
+          >
+            <div v-for="project in translations.projects" :key="project.name" class="entry">
+              <h3 class="wrapper entry-title">
+                <b>{{ project.name }} - </b>
+                <font-awesome-icon icon="calendar" class="text-teal date-icon" />
+                {{ project.year }}
+              </h3>
               <p class="m-0">
-                <strong class="job-subtitle">{{ translations.techStack }}:</strong> Java Spring Boot · React · MongoDB
-                · DigitalOcean · GitFlow · CI/CD
+                <strong class="job-subtitle">{{ translations.techStack }}:</strong>
+                {{ project.stack.join(' · ') }}
               </p>
               <ul class="justify-text m-2 mt-2">
-                <li v-for="(desc, index) in translations.projectDesc" :key="index">
-                  {{ desc }}
+                <li v-for="(bullet, index) in project.bullets" :key="index">
+                  {{ bullet }}
                 </li>
               </ul>
             </div>
-            <div>
-              <h5 class="wrapper mt-4">
-                <b>{{ translations.crazyLazySlothGenerator }} - </b>
-                <font-awesome-icon
-                  icon="calendar"
-                  class="text-teal"
-                  style="font-size: 85%"
-                />
-                2021
-              </h5>
-              <p class="m-0">
-                <strong class="job-subtitle">{{ translations.techStack }}:</strong> Python · Custom Algorithm · OpenSea
-              </p>
-              <ul class="justify-text m-2 mt-2">
-                <li v-for="(desc, index) in translations.nftProjectDesc" :key="index">
-                  {{ desc }}
-                </li>
-              </ul>
-            </div>
-          </div>
+          </collapsible-section>
         </div>
       </div>
-    </div>
+    </main>
 
-    <div class="footer">
-      <h4 class="pt-1">{{ translations.findMeOn }}</h4>
+    <footer class="footer">
+      <h2 class="footer-title pt-1">{{ translations.findMeOn }}</h2>
       <div class="wrapper">
-        <a href="https://www.linkedin.com/in/knavarronavarro" target="_blank"
-          ><img src="../assets/linkedIn.png" alt="LinkedIn Icon" class="icon"
+        <a :href="contact.linkedin" target="_blank" rel="noopener noreferrer"
+          ><img src="../assets/linkedIn.png" alt="LinkedIn" class="icon" width="40" height="40"
         /></a>
-        <a href="https://github.com/kevinNavarroNavarro" target="_blank"
-          ><img src="../assets/github.png" alt="LinkedIn Icon" class="icon"
+        <a :href="contact.github" target="_blank" rel="noopener noreferrer"
+          ><img src="../assets/github.png" alt="GitHub" class="icon" width="40" height="40"
         /></a>
       </div>
-    </div>
+    </footer>
   </div>
 </template>
 
@@ -427,10 +255,8 @@
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import {
   faBriefcase,
-  faHome,
   faEnvelope,
   faPhone,
-  faAsterisk,
   faBook,
   faClipboardCheck,
   faCirclePlus,
@@ -439,17 +265,20 @@ import {
   faSuitcase,
   faGraduationCap,
   faCertificate,
+  faChevronDown,
   faCode,
+  faFilePdf,
   faSun,
   faMoon,
 } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
+import { contact, skillGroups } from "../data/profile.js";
+import CollapsibleSection from "./CollapsibleSection.vue";
+
 library.add(
   faBriefcase,
-  faHome,
   faEnvelope,
   faPhone,
-  faAsterisk,
   faBook,
   faClipboardCheck,
   faCirclePlus,
@@ -458,7 +287,9 @@ library.add(
   faCalendar,
   faGraduationCap,
   faCertificate,
+  faChevronDown,
   faCode,
+  faFilePdf,
   faSun,
   faMoon
 );
@@ -467,6 +298,7 @@ export default {
   name: "kn-resume",
   components: {
     FontAwesomeIcon,
+    CollapsibleSection,
   },
   props: {
     translations: {
@@ -482,15 +314,26 @@ export default {
       required: true
     }
   },
+  emits: ["toggleTheme", "toggleLanguage"],
   data() {
-    return {};
+    return {
+      contact,
+      skillGroups
+    };
+  },
+  computed: {
+    themeToggleLabel() {
+      return this.theme === "dark"
+        ? this.translations.switchToLight
+        : this.translations.switchToDark;
+    }
   },
   methods: {
     toggleTheme() {
-      this.$emit('toggleTheme');
+      this.$emit("toggleTheme");
     },
     toggleLanguage() {
-      this.$emit('toggleLanguage');
+      this.$emit("toggleLanguage");
     }
   },
 };
@@ -523,13 +366,16 @@ h2 {
 h3,
 h4,
 h5,
-h6 {
+h6,
+h2.footer-title {
   font-family: "Inter", sans-serif;
   font-size: clamp(1.125rem, 2vw, 1.25rem);
   font-weight: 600;
   color: var(--text-primary);
   line-height: 1.4;
   margin-bottom: 0.5rem;
+  letter-spacing: normal;
+  text-shadow: none;
 }
 
 b {
@@ -553,7 +399,8 @@ li {
   margin-bottom: 0.5rem;
 }
 
-ul {
+ul,
+ol {
   list-style: none;
   padding-left: 0;
   margin: 0;
@@ -572,6 +419,36 @@ ul li::before {
   font-weight: 600;
 }
 
+/* Section heading styles live in CollapsibleSection.vue */
+.date-icon {
+  font-size: 85%;
+}
+
+.contact-link,
+.plain-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.plain-link:hover b {
+  color: var(--primary-color);
+}
+
+.two-col {
+  columns: 2;
+  column-gap: 1rem;
+}
+
+.two-col li {
+  break-inside: avoid;
+}
+
+/* Header */
 .header {
   background: linear-gradient(
     135deg,
@@ -590,9 +467,14 @@ ul li::before {
   transition: all 0.15s ease;
 }
 
-.header h1 {
+.header-title {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(1.875rem, 4vw, 2.5rem);
+  font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 0;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  text-shadow: 0 0 10px var(--glow-color);
 }
 
 .header a.pdf-link {
@@ -604,6 +486,7 @@ ul li::before {
   background: rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
   text-decoration: none;
+  min-height: 40px;
 }
 
 [data-theme="light"] .header a.pdf-link {
@@ -620,16 +503,17 @@ ul li::before {
   background: rgba(0, 0, 0, 0.1);
 }
 
-.header a.pdf-link img {
+.pdf-icon {
+  font-size: 1.5rem;
+  color: #ef4444;
   transition: transform 0.3s ease;
 }
 
-.header a.pdf-link:hover img {
+.header a.pdf-link:hover .pdf-icon {
   transform: scale(1.1);
 }
 
-.header a.pdf-link::after {
-  content: attr(title);
+.pdf-label {
   color: var(--text-primary);
   font-size: 0.875rem;
   font-weight: 500;
@@ -681,10 +565,6 @@ ul li::before {
   padding: 0.5rem;
 }
 
-.gap-3 {
-  gap: 1rem;
-}
-
 [data-theme="light"] .header {
   background: linear-gradient(
     135deg,
@@ -716,6 +596,12 @@ ul li::before {
   max-width: 1400px;
   margin: 1.5rem auto;
   padding: 0 0.5rem;
+}
+
+/* Bootstrap's negative row gutters were 4px wider than the padding, causing a sideways scroll */
+.main-div > .row {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .card {
@@ -765,9 +651,20 @@ ul li::before {
   transform: scaleX(1);
 }
 
+/* Profile block */
 .personal-information {
   text-align: center;
   padding: 1rem 0;
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 4px solid var(--primary-color);
+  box-shadow: 0 0 20px var(--glow-color), 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .personal-information h1 {
@@ -791,6 +688,12 @@ ul li::before {
   gap: 0.75rem;
   margin-bottom: 1rem;
   font-size: 1rem;
+}
+
+.personal-information p.headline {
+  font-size: 1.125rem;
+  color: var(--secondary-color);
+  font-weight: 500;
 }
 
 hr {
@@ -824,9 +727,9 @@ hr {
   );
   color: white;
   display: inline-block;
-  padding: 0.25rem 0.75rem;
+  padding: 0.125rem 0.75rem;
   border-radius: 20px;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -839,6 +742,7 @@ hr {
   box-shadow: var(--shadow-md);
 }
 
+/* Education / certificate / project entries */
 .wrapper {
   position: relative;
   padding-left: 2rem;
@@ -868,6 +772,88 @@ hr {
     0 0 10px var(--secondary-color);
 }
 
+.entry + .entry .entry-title {
+  margin-top: 1rem;
+}
+
+/* Experience timeline */
+.timeline-company {
+  position: relative;
+  padding-left: 2rem;
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-company::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.75rem;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--secondary-color), transparent);
+}
+
+.timeline-company::after {
+  content: "";
+  position: absolute;
+  left: -4px;
+  top: 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--secondary-color);
+  box-shadow: 0 0 0 4px var(--bg-primary), 0 0 0 6px var(--secondary-color),
+    0 0 10px var(--secondary-color);
+}
+
+.company-name {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(1.125rem, 2vw, 1.3rem);
+  margin-bottom: 0.5rem;
+}
+
+.company-location {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-light);
+}
+
+.timeline-role {
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+
+/* Hollow sub-dots when several roles share one company */
+.is-grouped .timeline-role::before {
+  content: "";
+  position: absolute;
+  left: calc(-2rem - 4px);
+  top: 0.45rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--secondary-color);
+  background: var(--bg-primary);
+}
+
+.role-title {
+  font-size: clamp(1rem, 1.8vw, 1.1rem);
+  margin-bottom: 0.15rem;
+}
+
+.role-dates {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 0.25rem;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -895,7 +881,7 @@ hr {
   transition: all 0.15s ease;
 }
 
-.footer h4 {
+.footer .footer-title {
   color: var(--text-primary);
   margin-bottom: 1rem;
 }
@@ -910,6 +896,10 @@ hr {
 .footer .wrapper::before,
 .footer .wrapper::after {
   display: none;
+}
+
+.footer a {
+  border-radius: 6px;
 }
 
 .icon {
@@ -963,7 +953,14 @@ hr {
     padding: 0 0.25rem;
   }
 
+  /* Keep the stacked cards inside the viewport (no horizontal scroll) */
+  .main-div > .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   .card {
+    width: auto;
     margin: 0.5rem;
     padding: 1.5rem;
   }
@@ -972,48 +969,124 @@ hr {
     font-size: 0.875rem;
   }
 
-  .personal-information img {
-    width: 120px !important;
-    height: 120px !important;
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+  }
+
+  /* Justified text leaves large gaps in narrow columns */
+  .justify-text {
+    text-align: left;
   }
 
   .row {
     flex-direction: column;
   }
 
-  .wrapper {
+  .wrapper,
+  .timeline-company {
     padding-left: 1.5rem;
+  }
+
+  .is-grouped .timeline-role::before {
+    left: calc(-1.5rem - 4px);
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    padding: 1rem 0;
+  }
+
+  .header-content {
+    padding: 0 1rem;
+  }
+
+  .header-title {
+    font-size: clamp(1.25rem, 6vw, 1.5rem);
+  }
+
+  .header-buttons {
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  /* Icon-only download button on phones; the link keeps its aria-label */
+  .pdf-label {
+    display: none;
+  }
+
+  .header a.pdf-link {
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+/* Respect users who ask for less motion */
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    animation: none;
+  }
+
+  .card:hover,
+  .toggle-btn:hover,
+  .header a.pdf-link:hover,
+  .header a.pdf-link:hover .pdf-icon,
+  .icon:hover,
+  .tag:hover {
+    transform: none;
+  }
+
+  .card::before {
+    transition: none;
   }
 }
 
 @media print {
-  :root {
-    --bg-primary: #ffffff;
-    --bg-secondary: #ffffff;
-    --text-primary: #000000;
-    --text-secondary: #333333;
-    --border-color: #cccccc;
-  }
-
   .header,
   .footer {
     display: none;
   }
 
-  .card {
-    box-shadow: none;
-    border: 1px solid #ddd;
-    page-break-inside: avoid;
-    background: white;
-  }
-
-  #app {
-    background: white;
-  }
-
   .main-div {
     max-width: 100%;
     margin: 0;
+    padding: 0;
+  }
+
+  /* Stack the two cards full width on paper */
+  .main-div > .row {
+    display: block;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 1rem;
+    /* Side padding keeps the timeline dots from being clipped at the page edge */
+    padding: 1rem 0.75rem;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    background: white;
+    backdrop-filter: none;
+    animation: none;
+    overflow: visible;
+  }
+
+  .card::before {
+    display: none;
+  }
+
+  .profile-photo {
+    width: 100px;
+    height: 100px;
+    box-shadow: none;
+  }
+
+  .personal-information h1 {
+    background: none;
+    -webkit-text-fill-color: #000000;
+    filter: none;
   }
 
   h1,
@@ -1021,25 +1094,55 @@ hr {
   h3,
   h4,
   h5,
-  h6 {
+  h6,
+  b,
+  .header-title {
     color: #000000 !important;
     text-shadow: none !important;
   }
 
   p,
-  li {
+  li,
+  .company-location,
+  .role-dates {
     color: #333333 !important;
+  }
+
+  hr {
+    box-shadow: none;
+    background: #cccccc;
+  }
+
+  .tag {
+    background: none;
+    color: #000000;
+    border: 1px solid #999999;
+    box-shadow: none;
+  }
+
+  .timeline-role,
+  .entry {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  h2,
+  h3,
+  h4 {
+    break-after: avoid;
+    page-break-after: avoid;
   }
 }
 
-.skills-section h6 {
+.skills-section .skill-group-title {
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
   color: var(--text-primary);
   font-weight: 600;
+  font-size: 1rem;
 }
 
-.skills-section h6:first-child {
+.skills-section .skill-group-title:first-child {
   margin-top: 0;
 }
 
@@ -1079,6 +1182,9 @@ hr {
 .mb-2 {
   margin-bottom: 0.5rem;
 }
+.mb-3 {
+  margin-bottom: 1rem;
+}
 .p-0 {
   padding: 0;
 }
@@ -1100,6 +1206,7 @@ hr {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 0.75rem;
   padding: 0 1.5rem;
   max-width: 100%;
 }
