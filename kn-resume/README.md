@@ -1,16 +1,3 @@
 # kn-resume
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
+Setup, scripts and content editing are documented in the [main README](../README.md).
